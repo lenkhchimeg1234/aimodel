@@ -1,11 +1,14 @@
 import axios from "axios";
 
 export const TextGenerationFormData = async (text: string) => {
-    try {
-         const res = await axios.post("http://localhost:4000/generate-text", {
-              text,
-            });
-             if (!res) {
+  try {
+    const res = await axios.post(
+      "https://ai-model-back.onrender.com/generate-text",
+      {
+        text,
+      },
+    );
+    if (!res) {
       throw new Error("Failed to text to generate");
     }
 
@@ -17,5 +20,3 @@ export const TextGenerationFormData = async (text: string) => {
     throw error;
   }
 };
-    
-

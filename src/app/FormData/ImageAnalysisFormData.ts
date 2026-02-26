@@ -6,17 +6,14 @@ export const ImageAnalysisFormData = async (imageFile: File) => {
     formData.append("image", imageFile);
 
     const response = await axios.post(
-      "http://localhost:4000/analyze-image",
-      formData
+      "https://ai-model-back.onrender.com/analyze-image",
+      formData,
     );
-
-  
 
     if (!response) {
       throw new Error("Failed to upload image");
     }
 
-  
     const data = response;
     return data;
   } catch (error) {

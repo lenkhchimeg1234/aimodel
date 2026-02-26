@@ -5,9 +5,12 @@ export const ImageCreatorFormData = async (text: string) => {
     // const formData = new FormData();
     // formData.append("textInput", text);
 
-    const response = await axios.post("http://localhost:4000/create-image", {
-      text,
-    });
+    const response = await axios.post(
+      "https://ai-model-back.onrender.com/create-image",
+      {
+        text,
+      },
+    );
 
     if (!response) {
       throw new Error("Failed to text to image");
