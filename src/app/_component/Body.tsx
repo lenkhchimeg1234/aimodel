@@ -1,7 +1,9 @@
+"use client";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ImageAnalysisTab } from "./ImageAnalysisTab";
 import { IngredientRecognitionTab } from "./IngredientRecognitionTab";
 import { ImageCreatorTab } from "./ImageCreatorTab";
+import ChatButton from "./Chatbot";
 
 export function Body() {
   return (
@@ -18,6 +20,7 @@ export function Body() {
           <ImageAnalysisTab />
           <IngredientRecognitionTab />
           <ImageCreatorTab />
+          <ChatButton />
         </Tabs>
       </div>
     </div>

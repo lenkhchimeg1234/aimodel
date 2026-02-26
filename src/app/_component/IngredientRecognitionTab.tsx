@@ -59,14 +59,15 @@ export function IngredientRecognitionTab() {
             </Button>
           </CardTitle>
           <CardDescription>
-            Describe the food, and AI will detect the ingredients.
+            Describe what you want to generate, and the AI will respond with a
+            written explanation.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6">
           <div className="grid gap-3">
             <textarea
               className="flex h-31 p-2 px-3 items-start self-stretch rounded-md border border-[#E4E4E7] bg-white"
-              placeholder="Орц тодорхойлох"
+              placeholder="please enter your text here..."
               value={textInput}
               onChange={handleTextChange}
               disabled={loading}
