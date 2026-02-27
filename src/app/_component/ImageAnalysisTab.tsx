@@ -72,11 +72,12 @@ export function ImageAnalysisTab() {
     }
   };
   const handleGenerate = async () => {
-    setLoading(true);
+    if (loading) return;
     if (!selectedFile) {
       alert("Please select an image file first.");
       return;
     }
+    setLoading(true);
     try {
       const analysisResult = await ImageAnalysisFormData(selectedFile);
 
@@ -88,10 +89,9 @@ export function ImageAnalysisTab() {
       });
     } catch (error) {
       console.error("Error during image analysis:", error);
-    }
-    setTimeout(() => {
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   const handleReset = () => {
@@ -139,7 +139,11 @@ export function ImageAnalysisTab() {
             </div>
           )}
           <div className=" flex justify-end">
-            <Button size="sm" disabled={!selectedFile} onClick={handleGenerate}>
+            <Button
+              size="sm"
+              disabled={!selectedFile || loading}
+              onClick={handleGenerate}
+            >
               Generate
             </Button>
           </div>

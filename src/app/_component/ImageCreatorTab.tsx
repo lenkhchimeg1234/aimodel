@@ -17,7 +17,7 @@ import Image from "next/image";
 export function ImageCreatorTab() {
   const [text, setText] = useState<string>("");
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(
-    null
+    null,
   );
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -78,7 +78,7 @@ export function ImageCreatorTab() {
           <div className="grid gap-3">
             <textarea
               className="flex h-31 p-2 px-3 items-start self-stretch rounded-md border border-[#E4E4E7] bg-white"
-              placeholder="Хоолны тайлбар"
+              placeholder="Зүргийн тайлбар бичнэ үү"
               value={text}
               onChange={handleTextChange}
               disabled={loading}
